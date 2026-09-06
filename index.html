@@ -164,11 +164,23 @@ groups.forEach((g,gi)=>{
   root.appendChild(d);
  });
 });
-function setDateTime(){
- const now=new Date();
- document.getElementById("date").value=now.toLocaleDateString("ar-SA",{year:"numeric",month:"2-digit",day:"2-digit"});
- document.getElementById("time").value=now.toLocaleTimeString("ar-SA",{hour:"2-digit",minute:"2-digit"});
+function setDateTime() {
+  const now = new Date();
+
+  const day = String(now.getDate()).padStart(2, "0");
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const year = now.getFullYear();
+
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+
+  document.getElementById("date").value =
+    `${day}/${month}/${year}`;
+
+  document.getElementById("time").value =
+    `${hours}:${minutes}`;
 }
+
 setDateTime();
 </script>
 </body>

@@ -29,7 +29,8 @@ input:focus,textarea:focus{outline:2px solid #b8e6f6;border-color:var(--blue)}
 .item-name{font-weight:800;line-height:1.9;font-size:15px}
 .options{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .opt input{display:none}.opt span{display:inline-block;border:1px solid #c7dce7;border-radius:999px;padding:8px 14px;cursor:pointer;font-size:13px}
-.opt input:checked+span{background:var(--blue);color:white;border-color:var(--blue)}
+.opt input:checked+span{background:var(--blue);color:white;border-color:var(--blue);font-weight:800;box-shadow:0 0 0 2px rgba(13,135,200,.16)}
+.opt input:checked+span::before{content:"✓";font-weight:900;margin-left:6px}
 .note{margin-top:14px;min-height:95px;resize:vertical;background:#fbfdfe}
 .actions{display:flex;gap:10px;position:sticky;bottom:0;background:rgba(243,248,251,.95);padding:12px 14px;backdrop-filter:blur(8px);z-index:4}
 button{border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:pointer}
@@ -41,7 +42,8 @@ button{border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:poin
  .brand{box-shadow:none;padding:2px 6px;font-size:14px}.hero h1{font-size:16px;margin:5px 0}.hero p{color:#555;font-size:8px}
  .card{box-shadow:none;margin:0;padding:7px}.actions{display:none}.grid{grid-template-columns:repeat(4,1fr);gap:5px}
  .item{break-inside:avoid;padding:6px;margin:3px 0;border-radius:4px}.section-title{font-size:12px;margin:8px 0 3px;padding:4px 7px}
- .options{margin-top:3px}.opt span{padding:2px 6px;font-size:8px}.note{min-height:30px;padding:4px;font-size:8px}
+ .options{margin-top:3px}.opt span{padding:2px 6px;font-size:8px;background:#fff!important;color:#667!important;border:1px solid #c8d5dc!important;box-shadow:none!important}.opt input:checked+span{background:#fff!important;color:#000!important;border:2px solid #000!important;font-weight:900!important}.opt input:checked+span::before{content:"✓";font-weight:900;margin-left:4px}.note{min-height:30px;padding:4px;font-size:8px}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
  input{padding:4px;font-size:8px}
 }
 </style>
@@ -75,7 +77,7 @@ const groups = [
 
 ["المحطة والمظهر العام",[
 ["رؤية المحطة من الخارج جيدة أو محجوبة الرؤية","واضحة","غير واضحة"],
-["التأكد من سلامة وعمل لوحات الأسعار (التوتوم)","تم","لم يتم"],
+["التأكد من سلامة وعمل لوحات الأسعار (التوتم)","تم","لم يتم"],
 ["التأكد من سلامة لوحات الدخول والخروج","تم","لم يتم"],
 ["التأكد من أرضيات المحطة بشكل كامل من المدخل إلى المخرج","تم","لم يتم"],
 ["التأكد من تخطيط الأرضيات بشكل كامل مع موقف الناقلة","تم","لم يتم"],
@@ -112,8 +114,8 @@ const groups = [
 ["التأكد من نظافة منطقة التفريغ","تم","لم يتم"],
 ["التأكد من وجود طفاية حريق بالقرب من الخزان","تم","لم يتم"],
 ["التأكد من سلامة سلك التأريض","تم","لم يتم"],
-["التأكد من سلامة المقياس الإلكتروني واليدوي إن وجد","تم","لم يتم"],
-["التأكد من سلامة عصا القياس","تم","لم يتم"],
+["التأكد من سلامة المقاس الإلكتروني  إن وجد","تم","لم يتم"],
+["التأكد من سلامة المقاس اليدوي","تم","لم يتم"],
 ["التأكد من معرفة العمال بآلية التفريغ","تم","لم يتم"],
 ["متابعة آلية التفريغ","تم","لم يتم"],
 ["التأكد من سلامة ونظافة أرضية الارتدادات وخلوها من الملاحظات","تم","لم يتم"],
@@ -149,7 +151,7 @@ const groups = [
 ["تصريح بلدي","ساري","منتهي"],
 ["تصريح الدفاع المدني","ساري","منتهي"],
 ["تصريح الطاقة","ساري","منتهي"],
-["الشهادة الضريبية","ساري","منتهي"],
+["الشهادة الضريبية","موجود","غير موجود"],
 ["شهادة تقييس","ساري","منتهي"],
 ["شهادة امتثال المباني","ساري","منتهي"],
 ["التصريح البيئي","ساري","منتهي"],
@@ -195,3 +197,7 @@ setDateTime();
 </script>
 </body>
 </html>
+
+
+
+

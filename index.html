@@ -25,12 +25,12 @@ label{font-size:13px;font-weight:700;display:block;margin-bottom:6px}
 input,textarea{width:100%;border:1px solid #cddfe9;border-radius:10px;padding:12px;font:inherit;background:#fff}
 input:focus,textarea:focus{outline:2px solid #b8e6f6;border-color:var(--blue)}
 .section-title{font-size:19px;margin:28px 0 12px;border-right:5px solid var(--blue);padding:8px 11px;background:#f0f9fd;border-radius:7px}
-.item{border:1px solid var(--line);border-radius:14px;padding:15px;margin:10px 0;background:#fff}
-.item-name{font-weight:800;line-height:1.7}
-.options{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.item{border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0;background:#fff}
+.item-name{font-weight:800;line-height:1.9;font-size:15px}
+.options{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .opt input{display:none}.opt span{display:inline-block;border:1px solid #c7dce7;border-radius:999px;padding:8px 14px;cursor:pointer;font-size:13px}
 .opt input:checked+span{background:var(--blue);color:white;border-color:var(--blue)}
-.note{margin-top:10px;min-height:95px;resize:vertical;background:#fbfdfe}
+.note{margin-top:14px;min-height:95px;resize:vertical;background:#fbfdfe}
 .actions{display:flex;gap:10px;position:sticky;bottom:0;background:rgba(243,248,251,.95);padding:12px 14px;backdrop-filter:blur(8px);z-index:4}
 button{border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:pointer}
 .primary{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff}.secondary{background:#fff;color:var(--blue);border:1px solid var(--blue)}
@@ -162,7 +162,6 @@ const groups = [
 ];
 const root=document.getElementById("sections");
 groups.forEach((g,gi)=>{
- const h=document.createElement("h2");h.className="section-title";h.textContent=g[0];root.appendChild(h);
  g[1].forEach((it,ii)=>{
   const d=document.createElement("div");d.className="item";
   const name="q"+gi+"_"+ii;
